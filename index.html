@@ -3,14 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>cs290-Assignment3-2</title>
+		<script src="assignment3-2.js"></script>
 	</head>
 	<body>
-  
-  <div id="results"></div>
-  
-  
+	
   <h2>Assignment 3 Part 2</h2>
-   <form action="http://web.engr.oregonstate.edu/~osterbit/2/repo/class-content/form_tests/Formtest.php" method="get">
+   <form> <!-- action="http://web.engr.oregonstate.edu/~osterbit/2/repo/class-content/form_tests/Formtest.php" method="get" -->
   <p>Select between 1 and 5 pages of Gists to display</p>
   <p>
 	  <label for="numerical_input2">Number of Pages</label>
@@ -33,9 +31,10 @@
     <input type="checkbox" id="language_2" name="language_SQL" value="1">
 	<label for="taste_2">SQL</label>
   </p>
-	<button type="submit">Search</button>
+	<input type="button" value="Search" onclick="getGists()">
   </form>
  
-
+  <div id="results"></div>
+ 
 	</body>
 </html>

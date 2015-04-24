@@ -14,10 +14,20 @@ function generate_list(gistDisc, gistURL, gistID) {
   
   var fbutton = document.createElement("button");
   fbutton.innerHTML = "+";
-  results.appendChild(fbutton);
-  fbutton.onclick = function(){
-	
-	var toBeFavoredGist = findById(gistId);
+  dl.appendChild(fbutton);
+  fbutton.onclick = function(gistDisc, gistURL){
+	var favorites = document.getElementById("favorites");
+	var dlf = document.createElement("dl");
+    var dtf = document.createElement("dt");
+    var ddf = document.createElement("dd");
+	dtf.innerText = gistDisc;
+    ddf.innerText = gistURL;
+    dlf.appendChild(dt);
+    dlf.appendChild(dd);
+    favorites.appendChild(dlf);
+	fbutton.innerHTML = "-";
+    dlf.appendChild(fbutton);
+	//var toBeFavoredGist = findById(gistId);
 	//here you add the gist to your favorite list in the localStorage and remove it 
 	//from the gist list and add it to favorite list
   }

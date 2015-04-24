@@ -21,3 +21,12 @@ div > h2 {
   margin-left: 40%;
   margin-right: 40%; 
 }
+
+div > dl, button {
+  margin-left: 10%;
+  margin-right: 30%;
+}
+
+div + div {
+  padding-left: 75px;
+}

@@ -1,53 +1,75 @@
-function generate_table(gistDisc) {
+function generate_list(gistDisc, gistURL, gistID) {
   // get the reference for the body
   var body = document.getElementById("results");
  
   // creates a <table> element and a <tbody> element
-  var tbl     = document.createElement("table");
-  var tblBody = document.createElement("tbody");
- 
-  // creating all cells
-  for (var i = 0; i < 30; i++) {
-    // creates a table row
-    var row = document.createElement("tr");
- 
-    for (var j = 0; j < 1; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
-      // the end of the table row
-      var cell = document.createElement("td");
-      var cellText = document.createTextNode(gistDisc);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-    }
- 
-    // add the row to the end of the table body
-    tblBody.appendChild(row);
-  }
- 
-  // put the <tbody> in the <table>
-  tbl.appendChild(tblBody);
-  // appends <table> into <body>
-  body.appendChild(tbl);
-  // sets the border attribute of tbl to 2;
-  tbl.setAttribute("border", "2");
+  var dl = document.createElement("dl");
+  var dt = document.createElement("dt");
+  var dd = document.createElement("dd");
+  dt.innerText = gistDisc;
+  dd.innerText = gistURL;
+  dl.appendChild(dt);
+  dl.appendChild(dd);
+  body.appendChild(dl);
+  
+  var fbutton = document.createElement("button");
+  fbutton.innerHTML = "+";
+  body.appendChild(fbutton);
+  makeButton(gistID);
+
 }
 
+
+
+var gistResponse = [];
 function getGists() {
   var req = new XMLHttpRequest();
   if(!req) {
     throw 'Unable to create HttpRequest.';
   }
+  
   var url = 'https://api.github.com/gists/public'
+  var pageNum = document.getElementById("numerical_input").value;
+    if (pageNum > 0) {
+    url += '?page=';
+    url += pageNum;
+    }
   req.onreadystatechange = function() {
-    if(this.readystate === 4) {
-	  var gistResponse = JSON.parse(this.responseText);
-	  gistDisc = gistResponse.list[0].description;
-	  generate_table(gistDisc);
+    if(this.readyState == 4 && this.status == 200) {
+      console.log("if test inside getGists");
+	  gistResponse = JSON.parse(this.responseText);
+	  
+	  var limit = 30 * pageNum
+	  var i;
+	  for (i = 0; i < limit; i++) {
+	    gistDisc = gistResponse[i].description;
+		gistURL = gistResponse[i].url;
+		gistID = gistResponse[i].id;
+	    generate_list(gistDisc, gistURL, gistID);
+      }
+	  
+	  console.log(pageNum);
+	  console.log(url);
+	  console.log(i);
+	  console.log(limit);
+	  
 	}	
   };
   req.open('GET', url);
   req.send();
+}
+
+function makeButton(gistID) {
+  var fbutton = document.createElement("button");
+  fbutton.innerHTML = "+";
+  fbutton.setAttribute("gistId", gistID);
+  fbutton.onclick = function(){
+	
+	var toBeFavoredGist = findById(gistId);
+	//here you add the gist to your favorite list in the localStorage and remove it 
+	//from the gist list and add it to favorite list
+  }
+  //body.appendChild(fbutton);
 }
 
 function urlStringify(obj) {

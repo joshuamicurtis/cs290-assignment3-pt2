@@ -1,6 +1,6 @@
 function generate_list(gistDisc, gistURL, gistID) {
   // get the reference for the body
-  var body = document.getElementById("results");
+  var results = document.getElementById("results");
  
   // creates a <table> element and a <tbody> element
   var dl = document.createElement("dl");
@@ -10,13 +10,17 @@ function generate_list(gistDisc, gistURL, gistID) {
   dd.innerText = gistURL;
   dl.appendChild(dt);
   dl.appendChild(dd);
-  body.appendChild(dl);
+  results.appendChild(dl);
   
   var fbutton = document.createElement("button");
   fbutton.innerHTML = "+";
-  body.appendChild(fbutton);
-  makeButton(gistID);
-
+  results.appendChild(fbutton);
+  fbutton.onclick = function(){
+	
+	var toBeFavoredGist = findById(gistId);
+	//here you add the gist to your favorite list in the localStorage and remove it 
+	//from the gist list and add it to favorite list
+  }
 }
 
 
@@ -57,19 +61,6 @@ function getGists() {
   };
   req.open('GET', url);
   req.send();
-}
-
-function makeButton(gistID) {
-  var fbutton = document.createElement("button");
-  fbutton.innerHTML = "+";
-  fbutton.setAttribute("gistId", gistID);
-  fbutton.onclick = function(){
-	
-	var toBeFavoredGist = findById(gistId);
-	//here you add the gist to your favorite list in the localStorage and remove it 
-	//from the gist list and add it to favorite list
-  }
-  //body.appendChild(fbutton);
 }
 
 function urlStringify(obj) {

@@ -1,0 +1,23 @@
+body{
+  font-family: sans-serif;
+}
+
+form > p {
+  display: inline;
+}
+input[type="button"] {
+  margin-top: 25px;
+  display: block;
+}
+
+
+
+div {
+  width: 400px;
+  float: left;  
+}
+
+div > h2 {
+  margin-left: 40%;
+  margin-right: 40%; 
+}

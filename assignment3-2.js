@@ -2,8 +2,6 @@ window.onload = function() {
   n = 0
   while (localStorage.key(n)) {
     var favURL = localStorage.key(n)
-	console.log(localStorage.key(favURL));
-	console.log(localStorage.key(n));
 	var favDisc = localStorage.getItem(localStorage.key(n))
 	
 	var favorites = document.getElementById("favorites");
@@ -21,8 +19,6 @@ window.onload = function() {
     dlf.appendChild(a);
 	dlf.appendChild(unfavorite);
     favorites.appendChild(dlf);
-	//localStorage.setItem(gistURL, gistDisc );
-	//fbutton.parentNode.removeChild(fbutton);
 	unfavorite.onclick = function() {
 	  localStorage.removeItem(favURL);
 	  generate_list(favDisc, favURL);
@@ -97,7 +93,18 @@ function getGists() {
 	    gistDisc = gistResponse[i].description;
 		gistURL = gistResponse[i].url;
 		gistID = gistResponse[i].id;
-	    generate_list(gistDisc, gistURL, gistID);
+		
+		var j;
+        var favCheck = false;		
+		for (j = 0; j < localStorage.length; j++) {
+			console.log(localStorage.key(j));
+		  if (gistURL === localStorage.key(j)) {
+			  favCheck = true;
+			  break;
+		  }	  
+		}
+        if (favCheck === false)
+          generate_list(gistDisc, gistURL);		
       }
 	  
 	  console.log(pageNum);

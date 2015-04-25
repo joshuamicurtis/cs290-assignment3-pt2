@@ -6,10 +6,12 @@ function generate_list(gistDisc, gistURL, gistID) {
   var dl = document.createElement("dl");
   var dt = document.createElement("dt");
   var dd = document.createElement("dd");
+  var a = document.createElement('a');
+  a.setAttribute('href', gistURL);
   dt.innerText = gistDisc;
-  dd.innerText = gistURL;
+  a.appendChild(document.createTextNode(gistURL));
   dl.appendChild(dt);
-  dl.appendChild(dd);
+  dl.appendChild(a);
   results.appendChild(dl);
   
   var fbutton = document.createElement("button");
@@ -20,12 +22,12 @@ function generate_list(gistDisc, gistURL, gistID) {
 	var unfavorite = document.createElement("button");
 	var favorites = document.getElementById("favorites");
 	var dlf = document.createElement("dl");
-    var dtf = document.createElement("dt");
-    var ddf = document.createElement("dd");
-	dtf.innerText = gistDisc;
-    ddf.innerText = gistURL;
+    //var dtf = document.createElement("dt");
+    //var ddf = document.createElement("dd");
+	//dtf.innerText = gistDisc;
+    //ddf.innerText = gistURL;
     dlf.appendChild(dt);
-    dlf.appendChild(dd);
+    dlf.appendChild(a);
     favorites.appendChild(dlf);
 	unfavorite.innerHTML = "-";
     dlf.appendChild(unfavorite);

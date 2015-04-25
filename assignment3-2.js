@@ -1,4 +1,38 @@
-function generate_list(gistDisc, gistURL, gistID) {
+window.onload = function() {
+  n = 0
+  while (localStorage.key(n)) {
+    var favURL = localStorage.key(n)
+	console.log(localStorage.key(favURL));
+	console.log(localStorage.key(n));
+	var favDisc = localStorage.getItem(localStorage.key(n))
+	
+	var favorites = document.getElementById("favorites");
+	var unfavorite = document.createElement("button");
+	var dlf = document.createElement("dl");
+	var dtf = document.createElement("dt");
+    var a = document.createElement('a');
+	
+	a.setAttribute('href', localStorage.key(n));
+	a.appendChild(document.createTextNode(favURL));
+    dtf.innerText = favDisc;
+	unfavorite.innerHTML = "-";
+	
+	dlf.appendChild(dtf);
+    dlf.appendChild(a);
+	dlf.appendChild(unfavorite);
+    favorites.appendChild(dlf);
+	//localStorage.setItem(gistURL, gistDisc );
+	//fbutton.parentNode.removeChild(fbutton);
+	unfavorite.onclick = function() {
+	  localStorage.removeItem(favURL);
+	  generate_list(favDisc, favURL);
+	  dlf.parentNode.removeChild(dlf);
+	};
+	n++;
+  }
+}
+
+function generate_list(gistDisc, gistURL) {
   // get the reference for the body
   var results = document.getElementById("results");
  
@@ -22,10 +56,6 @@ function generate_list(gistDisc, gistURL, gistID) {
 	var unfavorite = document.createElement("button");
 	var favorites = document.getElementById("favorites");
 	var dlf = document.createElement("dl");
-    //var dtf = document.createElement("dt");
-    //var ddf = document.createElement("dd");
-	//dtf.innerText = gistDisc;
-    //ddf.innerText = gistURL;
     dlf.appendChild(dt);
     dlf.appendChild(a);
     favorites.appendChild(dlf);
@@ -42,9 +72,7 @@ function generate_list(gistDisc, gistURL, gistID) {
   };
 }
 
-function removeFavorite() {
 
-}
 
 var gistResponse = [];
 function getGists() {

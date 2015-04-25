@@ -31,10 +31,10 @@ function generate_list(gistDisc, gistURL, gistID) {
     favorites.appendChild(dlf);
 	unfavorite.innerHTML = "-";
     dlf.appendChild(unfavorite);
-	localStorage.setItem(gistID, gistDisc);
+	localStorage.setItem(gistURL, gistDisc );
 	fbutton.parentNode.removeChild(fbutton);
 	unfavorite.onclick = function() {
-	  localStorage.removeItem(gistID);
+	  localStorage.removeItem(gistURL);
 	  generate_list(gistDisc, gistURL, gistID);
 	  dlf.parentNode.removeChild(dlf);
 	};

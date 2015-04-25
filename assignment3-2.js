@@ -15,7 +15,9 @@ function generate_list(gistDisc, gistURL, gistID) {
   var fbutton = document.createElement("button");
   fbutton.innerHTML = "+";
   dl.appendChild(fbutton);
-  fbutton.onclick = function(gistDisc, gistURL){
+  
+  fbutton.onclick = function (){
+	var unfavorite = document.createElement("button");
 	var favorites = document.getElementById("favorites");
 	var dlf = document.createElement("dl");
     var dtf = document.createElement("dt");
@@ -25,15 +27,22 @@ function generate_list(gistDisc, gistURL, gistID) {
     dlf.appendChild(dt);
     dlf.appendChild(dd);
     favorites.appendChild(dlf);
-	fbutton.innerHTML = "-";
-    dlf.appendChild(fbutton);
-	//var toBeFavoredGist = findById(gistId);
-	//here you add the gist to your favorite list in the localStorage and remove it 
-	//from the gist list and add it to favorite list
-  }
+	unfavorite.innerHTML = "-";
+    dlf.appendChild(unfavorite);
+	localStorage.setItem(gistID, gistDisc);
+	fbutton.parentNode.removeChild(fbutton);
+	unfavorite.onclick = function() {
+	  localStorage.removeItem(gistID);
+	  generate_list(gistDisc, gistURL, gistID);
+	  dlf.parentNode.removeChild(dlf);
+	};
+	  
+  };
 }
 
+function removeFavorite() {
 
+}
 
 var gistResponse = [];
 function getGists() {
@@ -53,9 +62,8 @@ function getGists() {
       console.log("if test inside getGists");
 	  gistResponse = JSON.parse(this.responseText);
 	  
-	  var limit = 30 * pageNum
 	  var i;
-	  for (i = 0; i < limit; i++) {
+	  for (i = 0; i < 30; i++) {
 	    gistDisc = gistResponse[i].description;
 		gistURL = gistResponse[i].url;
 		gistID = gistResponse[i].id;
@@ -65,13 +73,14 @@ function getGists() {
 	  console.log(pageNum);
 	  console.log(url);
 	  console.log(i);
-	  console.log(limit);
 	  
 	}	
   };
   req.open('GET', url);
   req.send();
 }
+
+
 
 function urlStringify(obj) {
   var str = [];

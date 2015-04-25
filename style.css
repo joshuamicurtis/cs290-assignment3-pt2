@@ -10,8 +10,6 @@ input[type="button"] {
   display: block;
 }
 
-
-
 div {
   width: 400px;
   float: left;  
@@ -29,4 +27,8 @@ div > dl, button {
 
 div + div {
   padding-left: 75px;
+}
+
+h2 {
+  color: #000080;
 }

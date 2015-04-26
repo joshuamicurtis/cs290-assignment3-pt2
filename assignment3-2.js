@@ -1,5 +1,6 @@
 /*global localStorage: false, window: false, document: false */
 /*global XMLHttpRequest: false */
+
 function generate_list(gistDisc, gistURL) {
   // get the reference for the body
   var results = document.getElementById("results");
@@ -75,9 +76,9 @@ window.onload = function () {
   }
 };
 
-var gistResponse = [];
 function getGists() {
   var req = new XMLHttpRequest();
+  var gistResponse = [];
   if (!req) {
     throw 'Unable to create HttpRequest.';
   }

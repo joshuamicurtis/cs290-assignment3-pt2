@@ -101,6 +101,7 @@ function getGists() {
         gistDisc = gistResponse[i].description;
         gistURL = gistResponse[i].url;
         for (j = 0; j < localStorage.length; j++) {
+          favCheck = false;
           if (gistURL === localStorage.key(j)) {
             favCheck = true;
             break;

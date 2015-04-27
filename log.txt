@@ -1,0 +1,118 @@
+Assignment 3 part 1
+
+Start: Mon, 20 Apr 2015 09:15:00 -0400
+End: Mon, 20 Apr 2015 09:21:29 -0400
+Tasks: Added blank log.txt
+
+Start: Mon, 20 Apr 2015 09:22:00 -0400
+End: Mon, 20 Apr 2015 09:27:55 -0400
+Tasks: Added qunit folder, src folder, tests folder, and qunit_runner.html to di
+
+Start: Mon, 20 Apr 2015 09:30:00 -0400
+End: Mon, 20 Apr 2015 10:04:09 -0400
+Tasks: Completed variables.js function, function passes test, still need to run
+
+Start: Mon, 20 Apr 2015 10:20:00 -0400
+End: Mon, 20 Apr 2015 12:20:43 -0400
+Tasks: Added completed funcions.js file to directory, not checked in jsLint.
+
+Start: Mon, 20 Apr 2015 13:00:00 -0400
+End: Mon, 20 Apr 2015 2:30:00 -0400
+Tasks: Started working on objects.js.Got stuck, emailed instructor.
+
+Start: Mon, 20 Apr 2015 19:00:00 -0400
+End: Mon, 20 Apr 2015 22:30:00 -0400
+Tasks: Added objects.js, passed test, still needs to pass jsLint.
+
+
+Start: Tue, 21 Apr 2015 9:00:00 -0400
+End: Tue, 21 Apr 2015 10:25:17 -0400
+Tasks: Add functions.js objects.js, and variable.js that pass js lint.
+
+
+Assignment 3 part 2
+
+Start: Thu, 23 Apr 2015 9:30:40 -0400
+End: Thu, 23 Apr 2015 12:02:40 -0400
+Tasks: Added index.html file for assignment3 part 2. Includes form. No real func
+
+Start: Thu, 23 Apr 2015 12:36:40 -0400
+End: Thu, 23 Apr 2015 14:03:37 -0400
+Tasks: Added assignment3-2.js, still needs lots of work.
+
+Start: Fri, 24 Apr 2015 09:00:00 -0400
+End: Fri, 24 Apr 2015 09:59:00 -0400
+Tasks: Add updates to index.html and to assignment3-2.js, I can now display one
+
+Start: End: Fri, 24 Apr 2015 10:15:18 -0400
+End: Fri, 24 Apr 2015 10:38:18 -0400
+Tasks: Add stylesheet, should still add some color.
+
+Start: End: Fri, 24 Apr 2015 10:40:18 -0400
+End: Fri, 24 Apr 2015 11:06:35 -0400
+Tasks: Now can add gists to favorites, still need to be able to remove gists fro
+
+Start: Sat, 25 Apr 2015 10:00:02 -0400
+End: Sat, 25 Apr 2015 10:50:02 -0400
+Tasks: Can favorite gist, favorited gist is added to favorite list, gistID is st
+
+Start: Sat, 25 Apr 2015 10:50:02 -0400
+End: Sat, 25 Apr 2015 11:02:20 -0400
+Tasks: Added links to gist list.
+
+
+Start: Sat, 25 Apr 2015 11:02:20 -0400
+Tasks: Can add and remove favorites, and favorites persist if the page is reload
+End: Sat, 25 Apr 2015 11:13:31 -0400
+Tasks: Local storage key is gistURL.
+
+Start: Sat, 25 Apr 2015 11:13:31 -0400
+End: Sat, 25 Apr 2015 12:20:30 -0400
+Tasks: Can add and remove favorites, and favorites persist if the page is reload
+
+Start: Sat, 25 Apr 2015 13:01:30 -0400
+End: Sat, 25 Apr 2015 14:01:30 -0400
+Tasks: This should be done, except for checking jsLint.
+
+Start: Sun, 26 Apr 2015 06:00:18 -0400
+End: Sun, 26 Apr 2015 07:06:18 -0400
+Tasks: assignment3-2.js passes jsLint.
+
+Start: Sun, 26 Apr 2015 07:06:18 -0400
+End: Sun, 26 Apr 2015 07:30:40 -0400
+Tasks: Problems searching for the same page as a page that has favorites.
+
+Start: Sun, 26 Apr 2015 07:30:40 -0400
+End: Sun, 26 Apr 2015 07:35:26 -0400
+Tasks: Fixed assignment3-2.js bug
+
+Start: Sun, 26 Apr 2015 07:35:26 -0400
+End: Sun, 26 Apr 2015 07:42:59 -0400
+Tasks: index.html passes validator.
+
+Start: Sun, 26 Apr 2015 21:21:55 -0400
+End: Sun, 26 Apr 2015 22:21:55 -0400
+Tasks: Tried to get website to work in IE. Failed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

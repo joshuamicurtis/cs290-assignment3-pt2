@@ -77,7 +77,12 @@ window.onload = function () {
 };
 
 function getGists() {
-  var req = new XMLHttpRequest();
+  var req;
+  if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+    req = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE 6 and older
+    req = new ActiveXObject("Microsoft.XMLHTTP");
+}
   var gistResponse = [];
   if (!req) {
     throw 'Unable to create HttpRequest.';
